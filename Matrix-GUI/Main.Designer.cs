@@ -36,6 +36,7 @@ namespace Matrix_GUI
             this.Matrix1_textbox = new System.Windows.Forms.TextBox();
             this.Matrix2_textbox = new System.Windows.Forms.TextBox();
             this.Start = new System.Windows.Forms.Button();
+            this.Result = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // textBox1
@@ -92,11 +93,20 @@ namespace Matrix_GUI
             this.Start.UseVisualStyleBackColor = true;
             this.Start.Click += new System.EventHandler(this.Start_Click);
             // 
+            // Result
+            // 
+            this.Result.Location = new System.Drawing.Point(651, 84);
+            this.Result.Multiline = true;
+            this.Result.Name = "Result";
+            this.Result.Size = new System.Drawing.Size(125, 167);
+            this.Result.TabIndex = 7;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Result);
             this.Controls.Add(this.Start);
             this.Controls.Add(this.Matrix2_textbox);
             this.Controls.Add(this.Matrix1_textbox);
@@ -121,6 +131,7 @@ namespace Matrix_GUI
         private System.Windows.Forms.TextBox Matrix1_textbox;
         private System.Windows.Forms.TextBox Matrix2_textbox;
         private System.Windows.Forms.Button Start;
+        private System.Windows.Forms.TextBox Result;
     }
 }
 
