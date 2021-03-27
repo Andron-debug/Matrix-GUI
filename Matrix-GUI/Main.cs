@@ -114,10 +114,11 @@ namespace Matrix_GUI
             int si;
             si = Mode.SelectedIndex;
             int[,] R;
+            bool ok;
             switch (si)
             {
                 case 0:
-                    bool ok = true;
+                    ok = true;
                     if ((columnsA == -1) || (columnsB == -1))
                     {
                         ok = false;
@@ -130,10 +131,10 @@ namespace Matrix_GUI
                     }
                     if (ok)
                     {
-                        R = new int[columnsA, rowsA];
-                        for (int i = 0; i <R.GetLength(0); i++)
+                        R = new int[rowsA, columnsA];
+                        for (int i = 0; i < rowsA; i++)
                         {
-                            for (int j = 0; j<R.GetLength(1); j++)
+                            for (int j = 0; j < columnsA; j++)
                             {
                                 R[i, j] = A[i, j] + B[i, j];
                             }
@@ -142,6 +143,29 @@ namespace Matrix_GUI
                     }
                     break;
                 case 1:
+                    ok = true;
+                    if ((columnsA == -1) || (columnsB == -1))
+                    {
+                        ok = false;
+                        MessageBox.Show("Заполните обе матрицы");
+                    }
+                    if ((columnsA != columnsB) || (rowsA != rowsB))
+                    {
+                        ok = false;
+                        MessageBox.Show("Матрицы должы быть одних порядков");
+                    }
+                    if (ok)
+                    {
+                        R = new int[rowsA, columnsA];
+                        for (int i = 0; i < rowsA; i++)
+                        {
+                            for (int j = 0; j < columnsA; j++)
+                            {
+                                R[i, j] = A[i, j] - B[i, j];
+                            }
+                        }
+                        matrix_print(R);
+                    }
                     break;
                 case 2:
                     break;
@@ -150,6 +174,7 @@ namespace Matrix_GUI
                 case 4:
                     break;
                 default:
+                    MessageBox.Show("Выберите действие");
                     break;
                         }
                    }
