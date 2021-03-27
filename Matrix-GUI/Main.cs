@@ -30,22 +30,22 @@ namespace Matrix_GUI
         }
 
         Random rnd = new Random();
-        private void matrix_print(int[,] matrix, int type = 3)
+        private void matrix_print(int[,] matrix, int type = 2)
         {
             //Параметр type отвечает за то куда выводить матрицу
-            //1 - A
-            //2 - B
-            //3 - C
+            //0 - A
+            //1 - B
+            //2 - C
             string s = "";
+            TextBox[] textboxs = { Matrix1_textbox, Matrix2_textbox, Result };
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
+                
                 for (int j = 0; j < matrix.GetLength(1); j++)
                 {
                     s += matrix[i, j] + " ";
                 }
-                if (type == 1) Matrix1_textbox.Text += s + Environment.NewLine;
-                if (type == 2) Matrix2_textbox.Text += s + Environment.NewLine;
-                if (type == 3) Result.Text += s + Environment.NewLine;
+                textboxs[type].Text += s + Environment.NewLine;
                 s = "";
          
             }
@@ -76,8 +76,8 @@ namespace Matrix_GUI
                     B[i, j] = rnd.Next(-10, 10);
                 }
             }
-            matrix_print(A, 1);
-            matrix_print(B, 2);
+            matrix_print(A, 0);
+            matrix_print(B, 1);
         }
 
         private void Main_Load(object sender, EventArgs e)
