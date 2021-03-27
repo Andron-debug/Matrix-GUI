@@ -30,9 +30,10 @@ namespace Matrix_GUI
         }
 
         Random rnd = new Random();
+
         private void matrix_print(int[,] matrix, int type = 2)
         {
-            //Параметр type отвечает за то куда выводить матрицу
+            //Параметр type отвечает за то, куда выводить матрицу
             //0 - A
             //1 - B
             //2 - C
@@ -49,7 +50,22 @@ namespace Matrix_GUI
                 s = "";
          
             }
-
+            int[,] MatrixInput(int type)
+            {
+                //Параметр type отвечает за то, откуда взять матрицу
+                //0 - A
+                //1 - B
+                //2 - C
+                TextBox[] textboxs = { Matrix1_textbox, Matrix2_textbox, Result};
+                int a = textboxs[type].Lines.GetLength(0);
+                int b = textboxs[type].Lines.GetLength(1);
+                int[,] matrix = new int[a,b];
+                for (int i = 0; i < b; i++)
+                {
+                    
+                }
+                return matrix;
+            }
 
         }
         private void Start_Click(object sender, EventArgs e)
