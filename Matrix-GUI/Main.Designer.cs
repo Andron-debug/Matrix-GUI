@@ -29,91 +29,127 @@ namespace Matrix_GUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox_columnsA = new System.Windows.Forms.TextBox();
+            this.textBox_rowsA = new System.Windows.Forms.TextBox();
+            this.textBox_rowsB = new System.Windows.Forms.TextBox();
+            this.textBox_coumnsB = new System.Windows.Forms.TextBox();
             this.Matrix1_textbox = new System.Windows.Forms.TextBox();
             this.Matrix2_textbox = new System.Windows.Forms.TextBox();
-            this.Start = new System.Windows.Forms.Button();
+            this.CreateA = new System.Windows.Forms.Button();
             this.Result = new System.Windows.Forms.TextBox();
+            this.CreareB = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // textBox_columnsA
             // 
-            this.textBox1.Location = new System.Drawing.Point(38, 39);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 27);
-            this.textBox1.TabIndex = 0;
+            this.textBox_columnsA.Location = new System.Drawing.Point(134, 96);
+            this.textBox_columnsA.Name = "textBox_columnsA";
+            this.textBox_columnsA.Size = new System.Drawing.Size(50, 27);
+            this.textBox_columnsA.TabIndex = 0;
             // 
-            // textBox2
+            // textBox_rowsA
             // 
-            this.textBox2.Location = new System.Drawing.Point(38, 84);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(125, 27);
-            this.textBox2.TabIndex = 1;
+            this.textBox_rowsA.Location = new System.Drawing.Point(38, 96);
+            this.textBox_rowsA.Name = "textBox_rowsA";
+            this.textBox_rowsA.Size = new System.Drawing.Size(50, 27);
+            this.textBox_rowsA.TabIndex = 1;
             // 
-            // textBox3
+            // textBox_rowsB
             // 
-            this.textBox3.Location = new System.Drawing.Point(412, 39);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(125, 27);
-            this.textBox3.TabIndex = 2;
+            this.textBox_rowsB.Location = new System.Drawing.Point(368, 96);
+            this.textBox_rowsB.Name = "textBox_rowsB";
+            this.textBox_rowsB.Size = new System.Drawing.Size(50, 27);
+            this.textBox_rowsB.TabIndex = 2;
             // 
-            // textBox4
+            // textBox_coumnsB
             // 
-            this.textBox4.Location = new System.Drawing.Point(412, 84);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(125, 27);
-            this.textBox4.TabIndex = 3;
+            this.textBox_coumnsB.Location = new System.Drawing.Point(464, 96);
+            this.textBox_coumnsB.Name = "textBox_coumnsB";
+            this.textBox_coumnsB.Size = new System.Drawing.Size(50, 27);
+            this.textBox_coumnsB.TabIndex = 3;
             // 
             // Matrix1_textbox
             // 
             this.Matrix1_textbox.Location = new System.Drawing.Point(38, 199);
             this.Matrix1_textbox.Multiline = true;
             this.Matrix1_textbox.Name = "Matrix1_textbox";
-            this.Matrix1_textbox.Size = new System.Drawing.Size(125, 167);
+            this.Matrix1_textbox.Size = new System.Drawing.Size(146, 167);
             this.Matrix1_textbox.TabIndex = 4;
             // 
             // Matrix2_textbox
             // 
-            this.Matrix2_textbox.Location = new System.Drawing.Point(412, 199);
+            this.Matrix2_textbox.Location = new System.Drawing.Point(368, 199);
             this.Matrix2_textbox.Multiline = true;
             this.Matrix2_textbox.Name = "Matrix2_textbox";
-            this.Matrix2_textbox.Size = new System.Drawing.Size(125, 167);
+            this.Matrix2_textbox.Size = new System.Drawing.Size(146, 167);
             this.Matrix2_textbox.TabIndex = 5;
             // 
-            // Start
+            // CreateA
             // 
-            this.Start.Location = new System.Drawing.Point(205, 145);
-            this.Start.Name = "Start";
-            this.Start.Size = new System.Drawing.Size(146, 30);
-            this.Start.TabIndex = 6;
-            this.Start.Text = "Заполнить A, B";
-            this.Start.UseVisualStyleBackColor = true;
-            this.Start.Click += new System.EventHandler(this.Start_Click);
+            this.CreateA.Location = new System.Drawing.Point(38, 138);
+            this.CreateA.Name = "CreateA";
+            this.CreateA.Size = new System.Drawing.Size(146, 30);
+            this.CreateA.TabIndex = 6;
+            this.CreateA.Text = "Заполнить A";
+            this.CreateA.UseVisualStyleBackColor = true;
+            this.CreateA.Click += new System.EventHandler(this.CreateA_Click);
             // 
             // Result
             // 
-            this.Result.Location = new System.Drawing.Point(651, 84);
+            this.Result.Location = new System.Drawing.Point(663, 199);
             this.Result.Multiline = true;
             this.Result.Name = "Result";
             this.Result.Size = new System.Drawing.Size(125, 167);
             this.Result.TabIndex = 7;
+            // 
+            // CreareB
+            // 
+            this.CreareB.Location = new System.Drawing.Point(368, 138);
+            this.CreareB.Name = "CreareB";
+            this.CreareB.Size = new System.Drawing.Size(146, 30);
+            this.CreareB.TabIndex = 8;
+            this.CreareB.Text = "Заполнить B";
+            this.CreareB.UseVisualStyleBackColor = true;
+            this.CreareB.Click += new System.EventHandler(this.CreareB_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(101, 99);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(18, 20);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "X";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(431, 99);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(18, 20);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "X";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.CreareB);
             this.Controls.Add(this.Result);
-            this.Controls.Add(this.Start);
+            this.Controls.Add(this.CreateA);
             this.Controls.Add(this.Matrix2_textbox);
             this.Controls.Add(this.Matrix1_textbox);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBox_coumnsB);
+            this.Controls.Add(this.textBox_rowsB);
+            this.Controls.Add(this.textBox_rowsA);
+            this.Controls.Add(this.textBox_columnsA);
             this.Name = "Main";
             this.Text = "н";
             this.Load += new System.EventHandler(this.Main_Load);
@@ -124,14 +160,17 @@ namespace Matrix_GUI
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox_columnsA;
+        private System.Windows.Forms.TextBox textBox_rowsA;
+        private System.Windows.Forms.TextBox textBox_rowsB;
+        private System.Windows.Forms.TextBox textBox_coumnsB;
         private System.Windows.Forms.TextBox Matrix1_textbox;
         private System.Windows.Forms.TextBox Matrix2_textbox;
-        private System.Windows.Forms.Button Start;
+        private System.Windows.Forms.Button CreateA;
         private System.Windows.Forms.TextBox Result;
+        private System.Windows.Forms.Button CreareB;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

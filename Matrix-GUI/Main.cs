@@ -17,16 +17,45 @@ namespace Matrix_GUI
             InitializeComponent();
         }
         int[,] A, B;
-        int n, m, k, l;
+        int columnsA, rowsA;
+        int columnsB, rowsB;
 
-        private void Menu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private void CreateA_Click(object sender, EventArgs e)
         {
-
+            
+            if ((textBox_columnsA.Text != "") & (textBox_rowsA.Text != ""))
+            {
+                columnsA = Convert.ToInt32(textBox_columnsA.Text); //Столбцы
+                rowsA = Convert.ToInt32(textBox_rowsA.Text); //Строки
+                A = new int[rowsA, columnsA];
+                for (int i = 0; i < rowsA; i++)
+                {
+                    for (int j = 0; j < columnsA; j++)
+                    {
+                        A[i, j] = rnd.Next(-10, 10);
+                    }
+                }
+                matrix_print(A, 0);
+            }
+            else MessageBox.Show("Введите размер матрицы");
         }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
+        private void CreareB_Click(object sender, EventArgs e)
         {
-
+            if ((textBox_rowsB.Text != "") & (textBox_coumnsB.Text != ""))
+            {
+                rowsB = Convert.ToInt32(textBox_rowsB.Text);
+                columnsB = Convert.ToInt32(textBox_coumnsB.Text);
+                B = new int[rowsB, columnsB];
+                for (int i = 0; i < rowsB; i++)
+                {
+                    for (int j = 0; j < columnsB; j++)
+                    {
+                        B[i, j] = rnd.Next(-10, 10);
+                    }
+                }
+                matrix_print(B, 1);
+            }
+            else MessageBox.Show("Введите размер матрицы");
         }
 
         Random rnd = new Random();
@@ -38,6 +67,7 @@ namespace Matrix_GUI
             //2 - C
             string s = "";
             TextBox[] textboxs = { Matrix1_textbox, Matrix2_textbox, Result };
+            textboxs[type].Text = "";
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 
@@ -52,34 +82,6 @@ namespace Matrix_GUI
 
 
         }
-        private void Start_Click(object sender, EventArgs e)
-        {
-            n = Convert.ToInt32(textBox1.Text);
-            m = Convert.ToInt32(textBox2.Text);
-            k = Convert.ToInt32(textBox3.Text);
-            l = Convert.ToInt32(textBox4.Text);
-            A = new int[n, m];
-            B = new int[k, l];
-
-            for (int i = 0; i < n; i++)
-            {
-                for (int j = 0; j < m; j++)
-                {
-                    A[i, j] = rnd.Next(-10, 10);
-                }
-            }
-
-            for (int i = 0; i < k; i++)
-            {
-                for (int j = 0; j < l; j++)
-                {
-                    B[i, j] = rnd.Next(-10, 10);
-                }
-            }
-            matrix_print(A, 0);
-            matrix_print(B, 1);
-        }
-
         private void Main_Load(object sender, EventArgs e)
         {
 
