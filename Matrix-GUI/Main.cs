@@ -117,7 +117,7 @@ namespace Matrix_GUI
             bool ok;
             switch (si)
             {
-                case 0:
+                case 0:// Сложить
                     ok = true;
                     if ((columnsA == -1) || (columnsB == -1))
                     {
@@ -142,7 +142,7 @@ namespace Matrix_GUI
                         matrix_print(R);
                     }
                     break;
-                case 1:
+                case 1:// Вычесть
                     ok = true;
                     if ((columnsA == -1) || (columnsB == -1))
                     {
@@ -167,11 +167,43 @@ namespace Matrix_GUI
                         matrix_print(R);
                     }
                     break;
-                case 2:
+                case 2: // Умножить
+                    ok = true;
+                    if ((columnsA == -1) || (columnsB == -1))
+                    {
+                        ok = false;
+                        MessageBox.Show("Заполните обе матрицы");
+                    }
+                    if (columnsA != rowsB)
+                    {
+                        ok = false;
+                        MessageBox.Show("Матрицы не возможно перемножить");
+                    }
+                    R = new int[rowsA, columnsB];
+                    for (int i = 0; i <rowsA; i++)
+                    {
+                        for( int j = 0; j<columnsB; j++)
+                        {
+                            R[i, j] = 0;
+                        }
+                    }
+
+                    for (int i = 0; i < rowsA; i++)
+                    {
+                        for (int j = 0; j < columnsB; j++)
+                        {
+                            for (int k = 0; k < rowsB; k++)
+                            {
+                                R[i, j] += A[i, k] * B[k, j];
+                            }
+                        }
+                    }
+
+                    matrix_print(R);
                     break;
-                case 3:
+                case 3: // Транспонировать А
                     break;
-                case 4:
+                case 4:// Транспонировать В
                     break;
                 default:
                     MessageBox.Show("Выберите действие");
