@@ -202,6 +202,21 @@ namespace Matrix_GUI
                     matrix_print(R);
                     break;
                 case 3: // Транспонировать А
+                    ok = true;
+                    if (columnsA == -1)
+                    {
+                        ok = false;
+                        MessageBox.Show("Заполните матрицу А");
+                    }
+                    R = new int[columnsA, rowsA];
+                    for (int i = 0; i <rowsA; i++)
+                    {
+                        for(int j = 0; j <columnsA; j++)
+                        {
+                            R[j, i] = A[i, j];
+                        }
+                    }
+                    matrix_print(R);
                     break;
                 case 4:// Транспонировать В
                     break;
