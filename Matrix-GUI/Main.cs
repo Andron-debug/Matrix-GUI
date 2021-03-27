@@ -17,8 +17,10 @@ namespace Matrix_GUI
             InitializeComponent();
         }
         int[,] A, B;
-        int columnsA, rowsA;
-        int columnsB, rowsB;
+        int columnsA = -1;
+        int rowsA = -1;
+        int columnsB = -1;
+        int rowsB = -1;
 
         private void CreateA_Click(object sender, EventArgs e)
         {
@@ -111,9 +113,33 @@ namespace Matrix_GUI
             //4 - Транспонировать B
             int si;
             si = Mode.SelectedIndex;
+            int[,] R;
             switch (si)
             {
                 case 0:
+                    bool ok = true;
+                    if ((columnsA == -1) || (columnsB == -1))
+                    {
+                        ok = false;
+                        MessageBox.Show("Заполните обе матрицы");
+                    }
+                    if ((columnsA != columnsB) || (rowsA != rowsB))
+                    {
+                        ok = false;
+                        MessageBox.Show("Матрицы должы быть одних порядков");
+                    }
+                    if (ok)
+                    {
+                        R = new int[columnsA, rowsA];
+                        for (int i = 0; i <R.GetLength(0); i++)
+                        {
+                            for (int j = 0; j<R.GetLength(1); j++)
+                            {
+                                R[i, j] = A[i, j] + B[i, j];
+                            }
+                        }
+                        matrix_print(R);
+                    }
                     break;
                 case 1:
                     break;
@@ -125,8 +151,8 @@ namespace Matrix_GUI
                     break;
                 default:
                     break;
-            }
-        }
+                        }
+                   }
 
         Random rnd = new Random();
         private void matrix_print(int[,] matrix, int type = 2)
