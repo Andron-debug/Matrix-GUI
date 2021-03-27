@@ -36,10 +36,17 @@ namespace Matrix_GUI
             this.Matrix1_textbox = new System.Windows.Forms.TextBox();
             this.Matrix2_textbox = new System.Windows.Forms.TextBox();
             this.CreateA = new System.Windows.Forms.Button();
-            this.Result = new System.Windows.Forms.TextBox();
+            this.Result_textbox = new System.Windows.Forms.TextBox();
             this.CreareB = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.Mode = new System.Windows.Forms.ComboBox();
+            this.sing = new System.Windows.Forms.Label();
+            this.TA = new System.Windows.Forms.Label();
+            this.TB = new System.Windows.Forms.Label();
+            this.Result_button = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox_columnsA
@@ -96,13 +103,13 @@ namespace Matrix_GUI
             this.CreateA.UseVisualStyleBackColor = true;
             this.CreateA.Click += new System.EventHandler(this.CreateA_Click);
             // 
-            // Result
+            // Result_textbox
             // 
-            this.Result.Location = new System.Drawing.Point(663, 199);
-            this.Result.Multiline = true;
-            this.Result.Name = "Result";
-            this.Result.Size = new System.Drawing.Size(125, 167);
-            this.Result.TabIndex = 7;
+            this.Result_textbox.Location = new System.Drawing.Point(663, 199);
+            this.Result_textbox.Multiline = true;
+            this.Result_textbox.Name = "Result_textbox";
+            this.Result_textbox.Size = new System.Drawing.Size(125, 167);
+            this.Result_textbox.TabIndex = 7;
             // 
             // CreareB
             // 
@@ -134,15 +141,105 @@ namespace Matrix_GUI
             this.label2.TabIndex = 10;
             this.label2.Text = "X";
             // 
+            // Mode
+            // 
+            this.Mode.FormattingEnabled = true;
+            this.Mode.Items.AddRange(new object[] {
+            "Сложить",
+            "Вычесть",
+            "Умножить",
+            "Транспонировать A",
+            "Транспонировать B"});
+            this.Mode.Location = new System.Drawing.Point(12, 12);
+            this.Mode.Name = "Mode";
+            this.Mode.Size = new System.Drawing.Size(200, 28);
+            this.Mode.TabIndex = 11;
+            this.Mode.Text = "Выбор действия";
+            this.Mode.SelectedIndexChanged += new System.EventHandler(this.Mode_SelectedIndexChanged);
+            // 
+            // sing
+            // 
+            this.sing.AutoSize = true;
+            this.sing.BackColor = System.Drawing.Color.Transparent;
+            this.sing.Font = new System.Drawing.Font("Segoe UI Black", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.sing.Location = new System.Drawing.Point(237, 234);
+            this.sing.Name = "sing";
+            this.sing.Size = new System.Drawing.Size(78, 81);
+            this.sing.TabIndex = 12;
+            this.sing.Text = "+";
+            this.sing.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // TA
+            // 
+            this.TA.AutoSize = true;
+            this.TA.BackColor = System.Drawing.Color.Transparent;
+            this.TA.Font = new System.Drawing.Font("Segoe UI Black", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TA.Location = new System.Drawing.Point(190, 153);
+            this.TA.Name = "TA";
+            this.TA.Size = new System.Drawing.Size(73, 81);
+            this.TA.TabIndex = 13;
+            this.TA.Text = "T";
+            this.TA.UseMnemonic = false;
+            // 
+            // TB
+            // 
+            this.TB.AutoSize = true;
+            this.TB.BackColor = System.Drawing.Color.Transparent;
+            this.TB.Font = new System.Drawing.Font("Segoe UI Black", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TB.Location = new System.Drawing.Point(520, 153);
+            this.TB.Name = "TB";
+            this.TB.Size = new System.Drawing.Size(73, 81);
+            this.TB.TabIndex = 14;
+            this.TB.Text = "T";
+            this.TB.UseMnemonic = false;
+            // 
+            // Result_button
+            // 
+            this.Result_button.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.Result_button.Font = new System.Drawing.Font("Segoe UI Black", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.Result_button.Location = new System.Drawing.Point(552, 237);
+            this.Result_button.Name = "Result_button";
+            this.Result_button.Size = new System.Drawing.Size(105, 100);
+            this.Result_button.TabIndex = 15;
+            this.Result_button.Text = "=";
+            this.Result_button.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Result_button.UseVisualStyleBackColor = false;
+            this.Result_button.Click += new System.EventHandler(this.Result_button_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(67, 64);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(85, 20);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Размеры A";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(402, 64);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(84, 20);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Размеры B";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.Result_button);
+            this.Controls.Add(this.TB);
+            this.Controls.Add(this.TA);
+            this.Controls.Add(this.sing);
+            this.Controls.Add(this.Mode);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CreareB);
-            this.Controls.Add(this.Result);
+            this.Controls.Add(this.Result_textbox);
             this.Controls.Add(this.CreateA);
             this.Controls.Add(this.Matrix2_textbox);
             this.Controls.Add(this.Matrix1_textbox);
@@ -151,7 +248,6 @@ namespace Matrix_GUI
             this.Controls.Add(this.textBox_rowsA);
             this.Controls.Add(this.textBox_columnsA);
             this.Name = "Main";
-            this.Text = "н";
             this.Load += new System.EventHandler(this.Main_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -167,10 +263,17 @@ namespace Matrix_GUI
         private System.Windows.Forms.TextBox Matrix1_textbox;
         private System.Windows.Forms.TextBox Matrix2_textbox;
         private System.Windows.Forms.Button CreateA;
-        private System.Windows.Forms.TextBox Result;
+        private System.Windows.Forms.TextBox Result_textbox;
         private System.Windows.Forms.Button CreareB;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox Mode;
+        private System.Windows.Forms.Label sing;
+        private System.Windows.Forms.Label TA;
+        private System.Windows.Forms.Label TB;
+        private System.Windows.Forms.Button Result_button;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
 

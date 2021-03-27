@@ -58,6 +58,76 @@ namespace Matrix_GUI
             else MessageBox.Show("Введите размер матрицы");
         }
 
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void Mode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Возможные значения si и действия при них:
+            //0 - Сложить
+            //1 - Вычесть
+            //2 - Умножить
+            //3 - Транспонировать A
+            //4 - Транспонировать B
+            int si;
+            si = Mode.SelectedIndex;
+            sing.Visible = false;
+            TA.Visible = false;
+            TB.Visible = false;
+            switch (si)
+            {
+                case 0:
+                    sing.Text = "+";
+                    sing.Visible = true;
+                    break;
+                case 1:
+                    sing.Text = "-";
+                    sing.Visible = true;
+                    break;
+                case 2:
+                    sing.Text = "*";
+                    sing.Visible = true;
+                    break;
+                case 3:
+                    TA.Visible = true;
+                    break;
+                case 4:
+                    TB.Visible = true;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void Result_button_Click(object sender, EventArgs e)
+        {
+            // Возможные значения si и действия при них:
+            //0 - Сложить
+            //1 - Вычесть
+            //2 - Умножить
+            //3 - Транспонировать A
+            //4 - Транспонировать B
+            int si;
+            si = Mode.SelectedIndex;
+            switch (si)
+            {
+                case 0:
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                default:
+                    break;
+            }
+        }
+
         Random rnd = new Random();
         private void matrix_print(int[,] matrix, int type = 2)
         {
@@ -66,7 +136,7 @@ namespace Matrix_GUI
             //1 - B
             //2 - C
             string s = "";
-            TextBox[] textboxs = { Matrix1_textbox, Matrix2_textbox, Result };
+            TextBox[] textboxs = { Matrix1_textbox, Matrix2_textbox, Result_textbox };
             textboxs[type].Text = "";
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
@@ -84,7 +154,9 @@ namespace Matrix_GUI
         }
         private void Main_Load(object sender, EventArgs e)
         {
-
+            sing.Visible = false;
+            TA.Visible = false;
+            TB.Visible = false;
         }
     }
 }
