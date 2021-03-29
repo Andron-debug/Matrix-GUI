@@ -265,6 +265,13 @@ namespace Matrix_GUI
 
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form a = new About();
+            a.Show();
+        }
+
         private void Main_Load(object sender, EventArgs e)
         {
             sing.Visible = false;

@@ -47,6 +47,7 @@ namespace Matrix_GUI
             this.Result_button = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox_columnsA
@@ -224,11 +225,22 @@ namespace Matrix_GUI
             this.label4.TabIndex = 17;
             this.label4.Text = "Размеры B";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(255, 9);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(146, 31);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "О программе";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Result_button);
@@ -274,6 +286,7 @@ namespace Matrix_GUI
         private System.Windows.Forms.Button Result_button;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button1;
     }
 }
 
